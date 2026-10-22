@@ -3,7 +3,7 @@
    ============================================================ */
 
 /* ── Google Fonts ─────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* ── CSS Custom Properties ────────────────────────────────── */
 :root {
@@ -25,9 +25,10 @@
   --clr-grey-100:      #f0f5f2;
   --clr-white:         #ffffff;
 
-  /* Typography Font Families */
-  --font-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography - Inter (Single Font Family) */
+  --font-family:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-primary: var(--font-family);
+  --font-body:    var(--font-family);
 
   /* Fluid Typography Scale */
   --fs-xs:   clamp(0.72rem, 0.70rem + 0.12vw, 0.78rem);     /* ~11.5px - 12.5px */
@@ -42,20 +43,20 @@
   --fs-5xl:  clamp(2.85rem, 2.25rem + 3.40vw, 3.85rem);     /* ~45.6px - 61.6px */
 
   /* Line Heights */
-  --lh-tight:    1.12;
-  --lh-snug:     1.20;
-  --lh-heading:  1.28;
-  --lh-body:     1.65;
-  --lh-relaxed:  1.72;
+  --lh-tight:    1.15;
+  --lh-snug:     1.22;
+  --lh-heading:  1.30;
+  --lh-body:     1.62;
+  --lh-relaxed:  1.70;
 
-  /* Letter Spacing (Tracking) */
-  --tracking-display:  -0.035em;
-  --tracking-title:    -0.022em;
-  --tracking-heading:  -0.014em;
-  --tracking-body:     -0.008em;
+  /* Letter Spacing (Tracking for Inter) */
+  --tracking-display:  -0.028em;
+  --tracking-title:    -0.020em;
+  --tracking-heading:  -0.012em;
+  --tracking-body:     -0.005em;
   --tracking-button:   -0.005em;
-  --tracking-wide:      0.035em;
-  --tracking-badge:     0.075em;
+  --tracking-wide:      0.025em;
+  --tracking-badge:     0.065em;
 
   /* Spacing */
   --sp-1:  0.25rem;
@@ -97,12 +98,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
+  font-family: var(--font-family);
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-family);
   font-size: var(--fs-base);
   color: var(--clr-charcoal);
   background-color: var(--clr-white);
@@ -135,7 +137,7 @@ a {
 ul, ol { list-style: none; }
 
 button, input, select, textarea {
-  font-family: inherit;
+  font-family: var(--font-family);
   font-size: inherit;
 }
 
@@ -161,42 +163,42 @@ button, input, select, textarea {
 
 /* ── Typography ───────────────────────────────────────────── */
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   color: var(--clr-charcoal);
   text-wrap: balance;
 }
 
 h1 {
   font-size: var(--fs-4xl);
-  font-weight: 800;
+  font-weight: 700;
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-display);
 }
 
 h2 {
   font-size: var(--fs-3xl);
-  font-weight: 800;
+  font-weight: 700;
   line-height: var(--lh-snug);
   letter-spacing: var(--tracking-title);
 }
 
 h3 {
   font-size: var(--fs-xl);
-  font-weight: 700;
+  font-weight: 600;
   line-height: var(--lh-heading);
   letter-spacing: var(--tracking-heading);
 }
 
 h4 {
   font-size: var(--fs-lg);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.32;
   letter-spacing: -0.010em;
 }
 
 h5 {
   font-size: var(--fs-md);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.38;
   letter-spacing: -0.005em;
 }
@@ -205,9 +207,9 @@ h5 {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-badge);
   text-transform: uppercase;
   color: var(--clr-primary);
@@ -226,7 +228,7 @@ h5 {
 
 .section-title {
   font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl));
-  font-weight: 800;
+  font-weight: 700;
   color: var(--clr-charcoal);
   margin-bottom: var(--sp-3);
   line-height: var(--lh-snug);
@@ -270,8 +272,8 @@ h5 {
   justify-content: center;
   gap: var(--sp-2);
   padding: 13px 26px;
-  font-family: var(--font-primary);
-  font-weight: 700;
+  font-family: var(--font-family);
+  font-weight: 600;
   font-size: var(--fs-sm);
   letter-spacing: var(--tracking-button);
   line-height: 1.2;
@@ -338,12 +340,14 @@ h5 {
 .btn--sm {
   padding: 9px 18px;
   font-size: var(--fs-xs);
+  font-weight: 600;
   letter-spacing: 0;
 }
 
 .btn--lg {
   padding: 15px 32px;
   font-size: var(--fs-base);
+  font-weight: 600;
   letter-spacing: var(--tracking-button);
 }
 
@@ -439,8 +443,8 @@ h5 {
 }
 
 .logo-name {
-  font-family: var(--font-primary);
-  font-weight: 800;
+  font-family: var(--font-family);
+  font-weight: 700;
   font-size: var(--fs-lg);
   color: var(--clr-primary);
   letter-spacing: -0.025em;
@@ -448,7 +452,7 @@ h5 {
 }
 
 .logo-tagline {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: 10px;
   font-weight: 600;
   color: var(--clr-grey-500);
@@ -467,9 +471,9 @@ h5 {
 
 .nav-link {
   padding: var(--sp-2) var(--sp-4);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.4;
   color: var(--clr-grey-700);
@@ -481,6 +485,7 @@ h5 {
 .nav-link:hover,
 .nav-link.active {
   color: var(--clr-primary);
+  font-weight: 600;
   background-color: var(--clr-mint);
 }
 
@@ -495,7 +500,7 @@ h5 {
   display: flex;
   align-items: center;
   gap: var(--sp-2);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-sm);
   font-weight: 600;
   letter-spacing: -0.005em;
@@ -572,7 +577,7 @@ h5 {
 .mobile-nav-link {
   display: block;
   padding: var(--sp-3) var(--sp-4);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-base);
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -657,9 +662,9 @@ h5 {
   background: rgba(26,92,56,0.10);
   border: 1px solid rgba(26,92,56,0.20);
   color: var(--clr-primary);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-badge);
   text-transform: uppercase;
   line-height: 1.2;
@@ -672,7 +677,7 @@ h5 {
 
 .hero-title {
   font-size: clamp(2.15rem, 4.4vw, 3.4rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--clr-charcoal);
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-display);
@@ -787,10 +792,10 @@ h5 {
 
 .hero-stat-value {
   font-size: var(--fs-sm);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--clr-charcoal);
-  font-family: var(--font-primary);
-  letter-spacing: -0.015em;
+  font-family: var(--font-family);
+  letter-spacing: -0.010em;
   line-height: 1.25;
 }
 
@@ -914,8 +919,8 @@ h5 {
   align-items: center;
   gap: var(--sp-2);
   color: var(--clr-primary);
-  font-family: var(--font-primary);
-  font-weight: 700;
+  font-family: var(--font-family);
+  font-weight: 600;
   font-size: var(--fs-sm);
   letter-spacing: var(--tracking-button);
   line-height: 1.3;
@@ -968,7 +973,7 @@ h5 {
 
 .feature-title {
   font-size: var(--fs-md);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--clr-charcoal);
   line-height: 1.30;
   letter-spacing: var(--tracking-heading);
@@ -1015,9 +1020,9 @@ h5 {
   display: inline-block;
   padding: 4px 14px;
   border-radius: var(--radius-full);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-badge);
   text-transform: uppercase;
   line-height: 1.2;
@@ -1036,7 +1041,7 @@ h5 {
 
 .package-title {
   font-size: var(--fs-2xl);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--clr-charcoal);
   line-height: var(--lh-snug);
   letter-spacing: var(--tracking-title);
@@ -1114,9 +1119,9 @@ h5 {
 }
 
 .serve-card-label {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-badge);
   text-transform: uppercase;
   color: var(--clr-mint-mid);
@@ -1126,7 +1131,7 @@ h5 {
 
 .serve-card-title {
   font-size: var(--fs-2xl);
-  font-weight: 800;
+  font-weight: 700;
   line-height: var(--lh-snug);
   letter-spacing: var(--tracking-title);
   margin-bottom: var(--sp-2);
@@ -1183,7 +1188,7 @@ h5 {
 
 .mission-tagline {
   font-size: clamp(var(--fs-2xl), 4vw, var(--fs-4xl));
-  font-weight: 800;
+  font-weight: 700;
   color: var(--clr-white);
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-title);
@@ -1279,9 +1284,9 @@ h5 {
 .filter-btn {
   padding: 8px 18px;
   border-radius: var(--radius-full);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-wide);
   line-height: 1.3;
   border: 2px solid var(--clr-grey-300);
@@ -1342,7 +1347,7 @@ h5 {
 
 .career-card-title {
   font-size: var(--fs-xl);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--clr-charcoal);
   line-height: var(--lh-heading);
   letter-spacing: var(--tracking-heading);
@@ -1359,9 +1364,9 @@ h5 {
   display: inline-block;
   padding: 3px 12px;
   border-radius: var(--radius-full);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-wide);
   line-height: 1.2;
   text-transform: uppercase;
@@ -1415,7 +1420,7 @@ h5 {
 
 .cta-banner-title {
   font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl));
-  font-weight: 800;
+  font-weight: 700;
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-display);
   color: var(--clr-white);
@@ -1543,23 +1548,23 @@ textarea.form-control {
 }
 
 .footer-brand-name {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xl);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--clr-white);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: var(--tracking-title);
+  line-height: var(--lh-tight);
   margin-bottom: var(--sp-1);
 }
 
 .footer-tagline {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
   color: var(--clr-mint-mid);
   letter-spacing: var(--tracking-badge);
   text-transform: uppercase;
   margin-bottom: var(--sp-4);
-  line-height: 1.2;
+  line-height: var(--lh-tight);
 }
 
 .footer-desc {
@@ -1570,9 +1575,9 @@ textarea.form-control {
 }
 
 .footer-col-title {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--clr-white);
   margin-bottom: var(--sp-3);
   letter-spacing: var(--tracking-badge);
@@ -1674,9 +1679,9 @@ textarea.form-control {
   display: flex;
   align-items: center;
   gap: var(--sp-2);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: rgba(255,255,255,0.70);
@@ -1690,7 +1695,7 @@ textarea.form-control {
 
 .page-title {
   font-size: clamp(var(--fs-3xl), 4.2vw, var(--fs-5xl));
-  font-weight: 800;
+  font-weight: 700;
   color: var(--clr-white);
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-display);
@@ -1755,7 +1760,7 @@ textarea.form-control {
 
 .value-title {
   font-size: var(--fs-lg);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--clr-charcoal);
   line-height: 1.30;
   letter-spacing: var(--tracking-heading);
@@ -1786,7 +1791,7 @@ textarea.form-control {
 
 .contact-info-title {
   font-size: var(--fs-2xl);
-  font-weight: 800;
+  font-weight: 700;
   line-height: var(--lh-snug);
   letter-spacing: var(--tracking-title);
   margin-bottom: var(--sp-2);
@@ -1826,9 +1831,9 @@ textarea.form-control {
 }
 
 .contact-info-label {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--tracking-badge);
   text-transform: uppercase;
   color: var(--clr-mint-mid);
@@ -1990,9 +1995,10 @@ textarea.form-control {
   border-radius: 50px;
   box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
   text-decoration: none;
-  font-family: var(--font-primary);
-  font-weight: 700;
+  font-family: var(--font-family);
+  font-weight: 600;
   font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-button);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
