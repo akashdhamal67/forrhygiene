@@ -58,8 +58,11 @@
 
     .gal-caption {
       color: var(--clr-white);
+      font-family: var(--font-primary);
       font-size: var(--fs-sm);
       font-weight: 600;
+      letter-spacing: -0.005em;
+      line-height: 1.35;
       opacity: 0;
       transform: translateY(8px);
       transition: opacity var(--transition), transform var(--transition);
@@ -121,6 +124,8 @@
       text-align: center;
       color: rgba(255,255,255,0.75);
       font-size: var(--fs-sm);
+      line-height: 1.55;
+      letter-spacing: var(--tracking-body);
       margin-top: var(--sp-4);
     }
 
@@ -132,7 +137,8 @@
       font-size: var(--fs-sm);
       color: var(--clr-grey-700);
       margin-bottom: var(--sp-8);
-      line-height: 1.6;
+      line-height: 1.55;
+      letter-spacing: var(--tracking-body);
     }
 
     @media (max-width: 900px) { .gallery-full-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -448,7 +454,7 @@
     </div>
 
     <div class="text-center mt-8 animate-on-scroll">
-      <p style="color: var(--clr-grey-700); font-size: var(--fs-sm); margin-bottom: var(--sp-4);">
+      <p style="color: var(--clr-grey-700); font-size: var(--fs-sm); line-height: 1.55; letter-spacing: var(--tracking-body); margin-bottom: var(--sp-4);">
         Interested in seeing how Forr Hygiene can help your society or home?
       </p>
       <a href="contact.html" class="btn btn--primary btn--lg">Request a Free Quote</a>
