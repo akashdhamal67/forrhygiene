@@ -603,7 +603,7 @@ h5 {
 
 /* ── Hero Section ─────────────────────────────────────────── */
 .hero {
-  min-height: 100vh;
+  min-height: clamp(540px, 80vh, 720px);
   display: flex;
   align-items: center;
   padding-top: var(--header-h);
@@ -643,13 +643,13 @@ h5 {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-16);
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
   align-items: center;
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: var(--sp-16) var(--sp-6);
+  padding: clamp(var(--sp-6), 3.5vw, var(--sp-10)) var(--sp-6);
 }
 
 .hero-content {
@@ -762,13 +762,13 @@ h5 {
 }
 
 .hero-stat-card--bottom {
-  bottom: -20px;
-  left: -30px;
+  bottom: -16px;
+  left: -14px;
 }
 
 .hero-stat-card--top {
-  top: -16px;
-  right: -20px;
+  top: -14px;
+  right: -14px;
 }
 
 .hero-stat-icon {
@@ -1912,7 +1912,10 @@ textarea.form-control {
 @media (max-width: 1100px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .hero-inner { gap: var(--sp-10); }
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-6);
+  }
 }
 
 @media (max-width: 900px) {
@@ -1921,8 +1924,8 @@ textarea.form-control {
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: var(--sp-10);
-    padding: var(--sp-12) var(--sp-6);
+    gap: var(--sp-6);
+    padding: var(--sp-8) var(--sp-4);
     text-align: center;
   }
 
